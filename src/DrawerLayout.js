@@ -24,6 +24,7 @@ export type PropType = {
     children: any,
     drawerBackgroundColor?: string,
     drawerLockMode?: 'unlocked' | 'locked-closed' | 'locked-open',
+    drawerMoveArea: number,
     drawerPosition: 'left' | 'right',
     drawerWidth: number,
     keyboardDismissMode?: 'none' | 'on-drag',
@@ -70,6 +71,7 @@ export default class DrawerLayout extends Component {
     static defaultProps = {
         drawerWidth: 0,
         drawerPosition: 'left',
+        drawerMoveArea: 35,
         useNativeAnimations: false,
     };
 
@@ -287,7 +289,7 @@ export default class DrawerLayout extends Component {
                     return true;
                 }
             } else {
-                if (moveX <= 35 && dx > 0) {
+                if (moveX <= this.props.drawerMoveArea && dx > 0) {
                     this._isClosing = false;
                     return true;
                 }
