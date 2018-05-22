@@ -71,7 +71,7 @@ export default class DrawerLayout extends Component {
     static defaultProps = {
         drawerWidth: 0,
         drawerPosition: 'left',
-        drawerMoveArea: 35,
+        drawerMoveArea: 100,
         useNativeAnimations: false,
     };
 
